@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{cardDetail?.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/card"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{cardDetail?.name}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card *ngIf="cardDetail && cardDetail.cardId">
+    <img [src]="cardDetail?.img" (error)="updateImage($event)" />
+    <ion-card-content>
+      <ion-card-title>{{cardDetail?.name}}</ion-card-title>
+      <p [innerHTML]="cardDetail?.text"></p>
+      <p>{{cardDetail?.flavor}}</p>
+      <ion-card-title>Stats</ion-card-title>
+      <p *ngIf="cardDetail?.health"><b>Health: </b>{{cardDetail?.health}}</p>
+      <p *ngIf="cardDetail?.attack"><b>Attack: </b>{{cardDetail?.attack}}</p>
+      <p *ngIf="cardDetail?.faction"><b>Faction: </b>{{cardDetail?.faction}}</p>
+      <p *ngIf="cardDetail?.rarity"><b>Rarity: </b>{{cardDetail?.rarity}}</p>
+      <p *ngIf="cardDetail?.type"><b>Type: </b>{{cardDetail?.type}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

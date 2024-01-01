@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{cardDeckGroup}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{cardDeckGroup}} </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list *ngIf="cards?.length > 0">
+    <ion-card *ngFor="let card of cards">
+      <ion-card-header text-wrap>
+        <ion-card-subtitle>{{card?.set}}</ion-card-subtitle>
+        <ion-card-title>{{card?.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div [innerHTML]="card?.text"></div>
+        <ion-button
+          full
+          size="medium"
+          expand="full"
+          [routerLink]="[generateUrl(card?.cardId)]"
+          >See details</ion-button
+        >
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
