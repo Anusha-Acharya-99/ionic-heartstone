@@ -8,6 +8,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <app-search
+    [items]="copyOfCards"
+    [filterProperty]="'name'"
+    (searchCompleted)="hydratedCards($event)"
+    (searchLoader)="showSpinner()"
+  ></app-search>
+  <ion-spinner text-center *ngIf="isLoading"></ion-spinner>
   <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
@@ -21,7 +28,15 @@
   <ion-list *ngIf="cards?.length > 0">
     <ion-card *ngFor="let card of cards">
       <ion-card-header text-wrap>
-        <ion-card-subtitle>{{card?.set}}</ion-card-subtitle>
+        <ion-card-subtitle
+          >{{card?.set}}
+          <ion-icon
+            name="flame"
+            class="like-icon"
+            (click)="toggleFavorite(card)"
+            [ngClass]="card.favorite? 'favorite':'normal'"
+          ></ion-icon>
+        </ion-card-subtitle>
         <ion-card-title>{{card?.name}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>

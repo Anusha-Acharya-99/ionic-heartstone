@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1031594053646",
+    "project_id": "heartstonelib-343dc",
+    "storage_bucket": "heartstonelib-343dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031594053646:android:887519b47ae5a0e62a2c5f",
+        "android_client_info": {
+          "package_name": "com.anusha.heartstonelib"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwSHbpvl6UuAa1_siXyU_eMIhB22yjjrc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyA3k9OFEVRKzxy44jRjuJ2wx3T6YMcmVY0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1031594053646</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.anusha.heartstonelib</string>
+	<key>PROJECT_ID</key>
+	<string>heartstonelib-343dc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>heartstonelib-343dc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1031594053646:ios:7f6a84499f2e639c2a2c5f</string>
+</dict>
+</plist>

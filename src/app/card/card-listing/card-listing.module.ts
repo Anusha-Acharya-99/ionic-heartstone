@@ -7,14 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { CardListingPageRoutingModule } from './card-listing-routing.module';
 
 import { CardListingPage } from './card-listing.page';
+import { SearchComponent } from 'src/app/shared/component/search/search.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CardListingPageRoutingModule
+    CardListingPageRoutingModule,
   ],
-  declarations: [CardListingPage]
+  declarations: [CardListingPage, SearchComponent],
 })
 export class CardListingPageModule {}

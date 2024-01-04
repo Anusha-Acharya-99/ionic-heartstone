@@ -21,4 +21,5 @@ export interface ICard {
   type: string;
   health: number;
   race: string;
+  favorite: boolean;
 }

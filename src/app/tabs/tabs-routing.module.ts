@@ -8,20 +8,23 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab2',
+        path: 'card',
         loadChildren: () =>
-          import('../tab2/tab2.module').then((m) => m.Tab2PageModule),
+          import('../card/card.module').then((m) => m.CardPageModule),
+      },
+      {
+        path: 'favorite-card',
+        loadChildren: () =>
+          import('../favorite-card/favorite-card.module').then(
+            (m) => m.FavoriteCardPageModule
+          ),
       },
       {
         path: 'tab3',
         loadChildren: () =>
           import('../tab3/tab3.module').then((m) => m.Tab3PageModule),
       },
-      {
-        path: 'card',
-        loadChildren: () =>
-          import('../card/card.module').then((m) => m.CardPageModule),
-      },
+
       {
         path: '',
         redirectTo: '/tabs/card',

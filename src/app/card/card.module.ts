@@ -11,10 +11,17 @@ import { CardService } from './shared/card.service';
 import { LoaderService } from '../shared/service/loader.service';
 import { ToastService } from '../shared/service/toast.service';
 import { AlertService } from '../shared/service/alert.service';
+import { FavoriteCardStore } from './shared/favorite-card.stores';
 
 @NgModule({
   imports: [IonicModule, CommonModule, CardPageRoutingModule, HttpClientModule],
   declarations: [CardDeckPage, CardListComponent],
-  providers: [CardService, LoaderService, ToastService, AlertService],
+  providers: [
+    CardService,
+    LoaderService,
+    ToastService,
+    AlertService,
+    FavoriteCardStore,
+  ],
 })
 export class CardPageModule {}

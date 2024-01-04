@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Favorite cards</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Favorite cards</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list *ngIf="favoriteCards.length>0">
+    <ion-card *ngFor="let favoriteCard of favoriteCards">
+      <ion-card-header text-wrap>
+        <ion-card-subtitle> {{favoriteCard?.set}} </ion-card-subtitle>
+        <ion-card-title>{{favoriteCard?.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div [innerHTML]="favoriteCard?.text"></div>
+        <ion-button
+          full
+          size="medium"
+          expand="full"
+          [routerLink]="[generateUrl(favoriteCard?.cardId)]"
+          >See details</ion-button
+        >
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
